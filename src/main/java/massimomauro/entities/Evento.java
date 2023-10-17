@@ -13,8 +13,11 @@ public class Evento {
     private String title;
     private LocalDate dataEvent;
     private String description;
+   // @Enumerated(EnumType.STRING)
     private EventType typeEvent;
     private int maxNumberPartecipants;
+
+    public Evento (){};
 
     public Evento(String title, LocalDate dataEvent, String description, EventType typeEvent, int maxNumberPartecipants) {
         this.title = title;

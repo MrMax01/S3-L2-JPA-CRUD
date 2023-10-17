@@ -23,17 +23,18 @@ public class EventDAO {
     }
 
     public Evento findById(long id) {
-        // SELECT * FROM students WHERE students.id=1
+
         return em.find(Evento.class, id);
     }
     public void delete(long id){
-        Evento found = findById(id);
-        if(found!=null){
+        Evento found = em.find(Evento.class, id);
+        if(found != null){
             EntityTransaction transiction = em.getTransaction();
             try{
                 transiction.begin();
                 em.remove(found);
                 transiction.commit();
+                System.out.println("elemento rimosso!");
             }catch (Exception e){
                 System.err.println("Si è presentato un errore nell'eliminare l'evento");
             }
