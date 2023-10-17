@@ -22,7 +22,8 @@ public class Application {
         Evento ev1 = new Evento("ev", today, "ciao", PRIVATO, 50  );
 
         sd.save(ev1);
-        sd.delete(13);
+        sd.delete(14);
+        System.out.println(sd.findById(15));
 
         System.out.println("Hello World!");
         em.close();
